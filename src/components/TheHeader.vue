@@ -1,7 +1,22 @@
 <script>
 export default {
-
-}
+    data() {
+        return {
+            headerNav: [
+                "characters",
+                "comics",
+                "movies",
+                "tv",
+                "games",
+                "collectibles",
+                "videos",
+                "fans",
+                "news",
+                "shop",
+            ]
+        };
+    }
+};
 </script>
 
 <template>
@@ -16,35 +31,8 @@ export default {
         <!-- Menù -->
         <nav>
             <ul class="my-navbar-link">
-                <li class="list-group-item">
-                    <a href="#" class="link-underline link-underline-opacity-0">characters</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#" class="link-underline link-underline-opacity-0">comics</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#" class="link-underline link-underline-opacity-0">movies</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#" class="link-underline link-underline-opacity-0">tv</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#" class="link-underline link-underline-opacity-0">games</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#" class="link-underline link-underline-opacity-0">collectibles</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#" class="link-underline link-underline-opacity-0">videos</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#" class="link-underline link-underline-opacity-0">fans</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#" class="link-underline link-underline-opacity-0">news</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="#" class="link-underline link-underline-opacity-0">shop</a>
+                <li class="list-group-item" v-for="navLink in headerNav">
+                    <a href="#" class="link-underline link-underline-opacity-0"> {{ navLink }} </a>
                 </li>
             </ul>
         </nav>
@@ -53,6 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
+
 .my-navbar-logo {
     img {
         max-width: 5rem;
@@ -72,12 +61,12 @@ export default {
         font-weight: bold;
 
         a {
-            color: $link-color;
+            color: $secondary-color;
             transition: color .2s;
         }
 
         a:hover {
-            color: $link-color-hover;
+            color: $primary-color;
         }
     }
 }
