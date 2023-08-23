@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-    <header class="container d-flex align-items-center justify-content-between pt-4 pb-4">
+    <header class="container d-flex align-items-center justify-content-between pt-4 pb-4 overflow-hidden">
         <!-- Logo -->
         <div>
             <a href="#" class="my-navbar-logo">
@@ -29,9 +29,9 @@ export default {
         </div>
 
         <!-- Menù -->
-        <nav>
-            <ul class="my-navbar-link">
-                <li class="list-group-item" v-for="navLink in headerNav">
+        <nav class="ps-2 ps-sm-4 ps-md-0">
+            <ul class="my-navbar-link d-flex flex-wrap align-items-center justify-content-center">
+                <li class="list-group-item pt-1 pt-md-0" v-for="navLink in headerNav">
                     <a href="#" class="link-underline link-underline-opacity-0"> {{ navLink }} </a>
                 </li>
             </ul>
