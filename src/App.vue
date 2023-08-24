@@ -3,7 +3,7 @@ import TheHeader from './components/TheHeader.vue';
 import TheFooter from './components/TheFooter.vue';
 import IndexBanner from './components/IndexBanner.vue';
 import CurrentSeries from './components/CurrentSeries.vue';
-import comics from './db/comics';
+import comics from './db/comics.json';
 
 export default {
   components: {
@@ -47,7 +47,7 @@ export default {
   <TheFooter></TheFooter>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "styles/partials/variables" as *;
 
 .comics-main {
@@ -89,5 +89,15 @@ export default {
 
 .my-btn-comics:hover {
   transform: scale(.97);
+  color: #ffffff;
+  background-color: $primary-color;
+  border: 2px solid $primary-color;
+}
+
+.my-btn-comics:active {
+  transform: scale(.97);
+  color: #ffffff !important;
+  background-color: $primary-color !important;
+  border: 2px solid $primary-color !important;
 }
 </style>
